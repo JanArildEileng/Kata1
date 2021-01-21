@@ -6,7 +6,7 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello My World!");
+            Console.WriteLine("Hello Dev World!");
 
             Testlib.Class1 class1=new Testlib.Class1() {
 
