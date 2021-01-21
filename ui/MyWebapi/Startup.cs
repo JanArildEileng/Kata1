@@ -11,7 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.InMemory;
 namespace MyWebapi
 {
     public class Startup
@@ -32,6 +33,12 @@ namespace MyWebapi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyWebapi", Version = "v1" });
             });
+            
+
+
+            services.AddDbContext<MyDbContext>(
+                options => options.UseInMemoryDatabase("test"));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
